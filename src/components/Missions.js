@@ -6,7 +6,7 @@ const Missions = () => (
   <Table striped bordered hover size="xl">
     <thead>
       <tr>
-        <th>Mission</th>
+        <th>{}</th>
         <th colSpan={5}>Description</th>
         <th>Status</th>
       </tr>
