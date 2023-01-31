@@ -1,0 +1,47 @@
+.rocketsList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rocket {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.rocketImg {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.rocketImg > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.rocketDetails {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.rocketDesc {
+  padding-top: 1rem;
+}
+
+@media only screen and (min-width: 980px) {
+  .rocketName {
+    font-size: 23px;
+  }
+
+  .rocketDesc {
+    font-size: 20px;
+    padding-top: 1.5rem;
+  }
+}
