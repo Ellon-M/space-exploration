@@ -12,6 +12,7 @@ const Rocket = ({
     <div className={styles.rocketDetails}>
       <h4 className={styles.rocketName}>{name}</h4>
       <p className={styles.rocketDesc}>{description}</p>
+      <button className={styles.rocketReserveBtn} type="button">Reserve Rocket</button>
     </div>
   </li>
 );

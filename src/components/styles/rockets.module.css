@@ -35,6 +35,17 @@
   padding-top: 1rem;
 }
 
+.rocketReserveBtn {
+  padding: 12px;
+  width: 140px;
+  text-align: center;
+  margin-top: 1.5rem;
+  background-color: #277dff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  }
+
 @media only screen and (min-width: 980px) {
   .rocketName {
     font-size: 23px;
