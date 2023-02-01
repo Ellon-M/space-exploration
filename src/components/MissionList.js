@@ -24,14 +24,11 @@ function MissionList() {
         </tr>
       </thead>
       <thead>
-        { listMissions && listMissions.map((mission) => {
-          console.log(mission.id);
-          return (
-            <tr key={mission.id}>
-              <Missions mission={mission} />
-            </tr>
-          );
-        })}
+        { listMissions && listMissions.map((mission) => (
+
+          <Missions key={mission.id} mission={mission} />
+
+        ))}
       </thead>
 
     </Table>
