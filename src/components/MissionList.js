@@ -19,7 +19,7 @@ function MissionList() {
       <thead>
         <tr>
           <th>Name</th>
-          <th colSpan={5}>Description</th>
+          <th>Description</th>
           <th>Status</th>
         </tr>
       </thead>
