@@ -15,20 +15,20 @@ export const FetchMissions = createAsyncThunk('missions/GET_MISSIONS', async () 
     };
     Mission.push(missions);
   });
+
   return Mission;
 });
 
-console.log('hello');
-
 const MissionReducer = createSlice({
   name: 'Missions',
-  initialState: { mission: [] },
+  initialState: { Mission: [] },
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(FetchMissions.fulfilled, (state, action) => {
-        console.log(state, action.payload);
-      });
+      .addCase(FetchMissions.fulfilled, (states, action) => ({
+        FetchMissions: [...action.payload],
+      }
+      ));
   },
 });
 
