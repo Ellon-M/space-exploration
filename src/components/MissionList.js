@@ -13,7 +13,6 @@ function MissionList() {
   }, [dispatch]);
 
   const listMissions = useSelector((mission) => mission.missions.FetchMissions);
-  console.log(listMissions);
 
   return (
     <Table striped bordered hover size="xl">
