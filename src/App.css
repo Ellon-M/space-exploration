@@ -28,17 +28,39 @@
 .member {
   width: 150px;
   border-radius: 5px;
-  padding: 5px 10px;
-  background-color: #28c3c3;
+  border: none;
+  padding: 1px 3px;
+  background-color: #26cccc;
+  color: #fff;
+  cursor: pointer;
+}
+
+.not-member {
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+  padding: 1px 3px;
+  background-color: #595b5b;
   color: #fff;
   cursor: pointer;
 }
 
 .Join-mission {
   width: 150px;
-  border: 2px solid red;
+  border: 2px solid #898484;
   padding: 2px 10px;
-  color: red;
+  color: #898484;
   border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.leave-mission {
+  width: 150px;
+  border: 2px solid #ff0000;
+  padding: 2px 10px;
+  color: #ff0000;
+  border-radius: 5px;
+  background: #fff;
   cursor: pointer;
 }
