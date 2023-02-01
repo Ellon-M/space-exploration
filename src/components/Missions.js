@@ -10,7 +10,7 @@ const Missions = (prop) => {
     id, name, description, reserved,
   } = prop.mission;
   return (
-    <>
+    <tr key={id}>
       <td>{name}</td>
       <td>{description}</td>
       <td>
@@ -21,7 +21,7 @@ const Missions = (prop) => {
           ? (<button type="button" className="Join-mission flex" onClick={() => dispatch(leaveMission(id))}>Leave Mission</button>)
           : (<button type="button" className="Join-mission flex" onClick={() => dispatch(joinMission(id))}>Join mission</button>)}
       </td>
-    </>
+    </tr>
   );
 };
 Missions.propType = {
