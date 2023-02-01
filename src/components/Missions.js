@@ -7,9 +7,13 @@ const Missions = (prop) => {
   return (
     <>
       <td>{name}</td>
-      <td colSpan={5}>{description}</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+      <td>{description}</td>
+      <td>
+        <p className="member flex">Not a member</p>
+      </td>
+      <td>
+        <p className="Join-mission flex">Join mission</p>
+      </td>
     </>
   );
 };
