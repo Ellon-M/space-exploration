@@ -14,11 +14,11 @@ const Missions = (prop) => {
       <td>{name}</td>
       <td>{description}</td>
       <td>
-        {reserved ? (<p className="member flex">Active member</p>) : (<p className="member flex">Not a member</p>)}
+        {reserved ? (<button type="button" className="member flex">Active member</button>) : (<button type="button" className="not-member flex">Not a member</button>)}
       </td>
       <td>
         {reserved
-          ? (<button type="button" className="Join-mission flex" onClick={() => dispatch(leaveMission(id))}>Leave Mission</button>)
+          ? (<button type="button" className="leave-mission flex" onClick={() => dispatch(leaveMission(id))}>Leave Mission</button>)
           : (<button type="button" className="Join-mission flex" onClick={() => dispatch(joinMission(id))}>Join mission</button>)}
       </td>
     </tr>
