@@ -1,18 +1,25 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { joinMission, leaveMission } from '../redux/Missions';
 
 const Missions = (prop) => {
-  const { name, description } = prop.mission;
+  const dispatch = useDispatch();
+  const {
+    id, name, description, reserved,
+  } = prop.mission;
   return (
     <>
       <td>{name}</td>
       <td>{description}</td>
       <td>
-        <p className="member flex">Not a member</p>
+        {reserved ? (<p className="member flex">Active member</p>) : (<p className="member flex">Not a member</p>)}
       </td>
       <td>
-        <p className="Join-mission flex">Join mission</p>
+        {reserved
+          ? (<button type="button" className="Join-mission flex" onClick={() => dispatch(leaveMission(id))}>Leave Mission</button>)
+          : (<button type="button" className="Join-mission flex" onClick={() => dispatch(joinMission(id))}>Join mission</button>)}
       </td>
     </>
   );
