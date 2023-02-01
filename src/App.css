@@ -5,6 +5,11 @@
   font-family: sans-serif;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
 .navigation-list {
   display: flex;
   justify-content: space-between;
@@ -18,4 +23,22 @@
 .navigation-list ul li {
   list-style: none;
   padding: 0 20px;
+}
+
+.member {
+  width: 150px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #28c3c3;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Join-mission {
+  width: 150px;
+  border: 2px solid red;
+  padding: 2px 10px;
+  color: red;
+  border-radius: 5px;
+  cursor: pointer;
 }
