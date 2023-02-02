@@ -25,6 +25,14 @@
   padding: 0 20px;
 }
 
+.navigation-list ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px;
+}
+
 .member {
   width: 150px;
   border-radius: 5px;
@@ -66,6 +74,6 @@
 }
 
 .active-link {
-  border: 2px solid;
-  color: rebeccapurple;
+  background-color: #338d99;
+  border-radius: 5px;
 }
