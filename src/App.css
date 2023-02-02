@@ -64,3 +64,8 @@
   background: #fff;
   cursor: pointer;
 }
+
+.active-link {
+  border: 2px solid;
+  color: rebeccapurple;
+}

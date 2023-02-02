@@ -7,9 +7,9 @@ function Navbar() {
       <div className="navigation-list">
         <h2>Space Exploration</h2>
         <ul>
-          <li><Link to="/"> Rockets </Link></li>
-          <li><Link to="/Missions"> Missions </Link></li>
-          <li><Link to="/Profile"> My Profile </Link></li>
+          <li><Link activeClassName="active-link" to="/"> Rockets </Link></li>
+          <li><Link activeClassName="active-link" to="/Missions"> Missions </Link></li>
+          <li><Link activeClassName="active-link" to="/Profile"> My Profile </Link></li>
         </ul>
       </div>
     </nav>
