@@ -6,7 +6,7 @@ import styles from './styles/rockets.module.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  const rockets = useSelector((state) => state.rocket.rockets);
+  const rockets = useSelector((state) => state.rockets.rockets);
 
   useEffect(() => {
     dispatch(getAllRockets());
@@ -15,13 +15,15 @@ const Rockets = () => {
   return (
     <>
       <ul className={styles.rocketsList}>
-        {rockets.map((rocket) => (
+        {rockets && rockets.map((rocket) => (
           <Rocket
             key={rocket.id}
+            id={rocket.id}
             name={rocket.name}
             type={rocket.type}
             description={rocket.description}
             images={rocket.images}
+            reserved={rocket.reserved}
           />
         ))}
       </ul>
