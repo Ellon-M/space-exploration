@@ -13,12 +13,12 @@ export const getAllRockets = createAsyncThunk(
   },
 );
 
-// const localRockets = JSON.parse(localStorage.getItem('state'));
+const localRockets = JSON.parse(localStorage.getItem('state'));
 
 export const rocketSlice = createSlice({
   name: 'rockets',
   initialState: {
-    rockets: [],
+    rockets: JSON.parse(localStorage.getItem('state')) ? JSON.parse(localStorage.getItem('state')) : [],
   },
   reducers: {
     reserve: (state, { payload }) => {
@@ -32,7 +32,7 @@ export const rocketSlice = createSlice({
     },
     cancel: (state, { payload }) => {
       const newState = state.rockets.map((rocket) => {
-        if ((rocket.id) !== (payload)) {
+        if (rocket.id !== payload) {
           return rocket;
         }
         return { ...rocket, reserved: false };
@@ -42,16 +42,17 @@ export const rocketSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getAllRockets.fulfilled, (state, action) => {
-        const rockets = action.payload;
-        rockets.forEach((rocketData) => {
+      .addCase(getAllRockets.fulfilled, (state, { payload }) => {
+        // const rockets = action.payload;
+        // console.log(rockets);
+        payload.forEach((rocketData, index) => {
           const rocket = {
             id: rocketData.id,
             name: rocketData.name,
             type: rocketData.type,
             images: rocketData.flickr_images,
             description: rocketData.description,
-            reserved: false,
+            reserved: localRockets?.[index].reserved ? localRockets?.[index].reserved : false,
           };
           state.rockets.push(rocket);
         });

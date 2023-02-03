@@ -67,6 +67,15 @@
   transform: scale(0.98);
 }
 
+.reservedBanner {
+  background: rgb(29, 165, 255);
+  padding: 0.15rem 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  color: white;
+}
+
 @media only screen and (min-width: 980px) {
   .rocketName {
     font-size: 23px;

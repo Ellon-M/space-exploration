@@ -25,7 +25,10 @@ const Rocket = ({
       </div>
       <div className={styles.rocketDetails}>
         <h4 className={styles.rocketName}>{name}</h4>
-        <p className={styles.rocketDesc}>{description}</p>
+        <p className={styles.rocketDesc}>
+          {reserved ? <span className={styles.reservedBanner}>reserved</span> : <></>}
+          {description}
+        </p>
         { reserved
           ? <button className={styles.rocketCancelBtn} type="button" onClick={handleCancel}>Cancel Reservation</button>
           : <button className={styles.rocketReserveBtn} type="button" onClick={handleReserve}>Reserve Rocket</button> }
