@@ -9,6 +9,7 @@ function Navbar() {
         <ul>
           <li><NavLink to="/" className={(navData) => (navData.isActive ? 'active-link' : 'none')}> Rockets </NavLink></li>
           <li><NavLink to="/Missions" className={(navData) => (navData.isActive ? 'active-link' : 'none')}> Missions </NavLink></li>
+          <div className="vertical" />
           <li><NavLink to="/Profile" className={(navData) => (navData.isActive ? 'active-link' : 'none')}> My Profile </NavLink></li>
         </ul>
       </div>
