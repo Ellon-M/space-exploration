@@ -7,9 +7,7 @@ import styles from './styles/rockets.module.css';
 const Rockets = () => {
   const dispatch = useDispatch();
   const initialState = useSelector((state) => state.rockets.rockets);
-  console.log(initialState);
   const rockets = JSON.parse(localStorage.getItem('state')) ? JSON.parse(localStorage.getItem('state')) : initialState;
-  console.log(rockets);
 
   useEffect(() => {
     dispatch(getAllRockets());

@@ -14,7 +14,8 @@ const Missions = (prop) => {
       <td>{name}</td>
       <td>{description}</td>
       <td>
-        {reserved ? (<button type="button" className="member flex">Active member</button>) : (<button type="button" className="not-member flex">Not a member</button>)}
+        {reserved ? (<button type="button" className="member flex">Active member</button>)
+          : (<button type="button" className="not-member flex">Not a member</button>)}
       </td>
       <td>
         {reserved
