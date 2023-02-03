@@ -15,21 +15,40 @@ export const FetchMissions = createAsyncThunk('missions/GET_MISSIONS', async () 
     };
     Mission.push(missions);
   });
+
   return Mission;
 });
 
-console.log('hello');
-
 const MissionReducer = createSlice({
   name: 'Missions',
-  initialState: { mission: [] },
-  reducers: {},
+  initialState: {},
+  reducers: {
+    joinMission: (state, action) => {
+      const id = action.payload;
+      const newMission = state.FetchMissions.map((mission) => {
+        if (mission.id === id) return { ...mission, reserved: true };
+        return { ...mission };
+      });
+      return { ...state, FetchMissions: [...newMission] };
+    },
+    leaveMission: (state, action) => {
+      const id = action.payload;
+      const newMission = state.FetchMissions.map((mission) => {
+        if (mission.id === id) return { ...mission, reserved: false };
+        return { ...mission };
+      });
+      return { ...state, FetchMissions: [...newMission] };
+    },
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(FetchMissions.fulfilled, (state, action) => {
-        console.log(state, action.payload);
-      });
+      .addCase(FetchMissions.fulfilled, (states, action) => ({
+        FetchMissions: [...action.payload],
+      }
+      ));
   },
 });
+
+export const { joinMission, leaveMission } = MissionReducer.actions;
 
 export default MissionReducer;
