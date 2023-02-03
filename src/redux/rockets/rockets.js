@@ -22,12 +22,15 @@ const rocketSlice = createSlice({
     status: 'idle',
   },
   reducers: {
-    reserve: (state, { payload }) => state.rockets?.map((rocket) => {
-      if ((rocket.id) !== (payload)) {
-        return rocket;
-      }
-      return { ...rocket, reserved: true };
-    }),
+    reserve: (state, { payload }) => {
+      const newState = state.rockets?.map((rocket) => {
+        if ((rocket.id) !== (payload)) {
+          return rocket;
+        }
+        return { ...rocket, reserved: true };
+      });
+      state.rockets = newState;
+    },
     cancel: (state, { payload }) => {
       const newState = state.rockets.map((rocket) => {
         if (rocket.id !== payload) {
@@ -35,7 +38,7 @@ const rocketSlice = createSlice({
         }
         return { ...rocket, reserved: false };
       });
-      state.rockets.push(...newState);
+      state.rockets = newState;
     },
   },
   extraReducers: (builder) => {

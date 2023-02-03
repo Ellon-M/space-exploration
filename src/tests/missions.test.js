@@ -6,12 +6,12 @@ import Missions from '../components/MissionList';
 import store from '../redux/configureStore';
 
 describe('missions', () => {
-    test('test if missions render', () => {
-        const tree = render(
-          <Provider store={store}>
-            <Missions />
-          </Provider>,
-        );
-        expect(tree).toMatchSnapshot();
+  test('test if missions render', () => {
+    const tree = render(
+      <Provider store={store}>
+        <Missions />
+      </Provider>,
+    );
+    expect(tree).toMatchSnapshot();
   });
 });

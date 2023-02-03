@@ -35,17 +35,19 @@ describe('rockets', () => {
       payload: '2',
     };
 
-    const expectedState = [
-      {
-        id: '1', name: 'A', reserved: false,
-      },
-      {
-        id: '2', name: 'B', reserved: true,
-      },
-      {
-        id: '3', name: 'C', reserved: false,
-      },
-    ];
+    const expectedState = {
+      rockets: [
+        {
+          id: '1', name: 'A', reserved: false,
+        },
+        {
+          id: '2', name: 'B', reserved: true,
+        },
+        {
+          id: '3', name: 'C', reserved: false,
+        },
+      ],
+    };
 
     const result = rocketSlice(state, action);
     expect(result).toEqual(expectedState);
