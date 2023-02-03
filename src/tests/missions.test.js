@@ -6,7 +6,7 @@ import Missions from '../components/MissionList';
 import store from '../redux/configureStore';
 
 describe('missions', () => {
-    test('component renders', () => {
+    test('test if missions render', () => {
         const tree = render(
           <Provider store={store}>
             <Missions />
