@@ -1,25 +1,25 @@
 import React from 'react';
+import Table from 'react-bootstrap/Table';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Missions = () => (
-  <table>
+  <Table striped bordered hover size="xl">
+    <thead>
+      <tr>
+        <th>{}</th>
+        <th colSpan={5}>Description</th>
+        <th>Status</th>
+      </tr>
+    </thead>
     <tbody>
       <tr>
-        <th>MISSON ONE</th>
-        <th>MISSION TWO</th>
-        <th>MISSION THREE</th>
-      </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-      </tr>
-      <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
+        <td>Mark</td>
+        <td colSpan={5}>Otto</td>
+        <td>@mdo</td>
+        <td>head</td>
       </tr>
     </tbody>
-  </table>
+  </Table>
 );
 
 export default Missions;
