@@ -23,4 +23,6 @@ export const unsubscribe = store.subscribe(() => {
   handleChange();
 });
 
+handleChange();
+
 export default store;

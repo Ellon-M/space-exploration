@@ -10,8 +10,10 @@ const Rockets = () => {
   const rockets = JSON.parse(localStorage.getItem('state')) ? JSON.parse(localStorage.getItem('state')) : initialState;
 
   useEffect(() => {
-    dispatch(getAllRockets());
-  }, [dispatch]);
+    if (rockets?.length === 0) {
+      dispatch(getAllRockets());
+    }
+  }, [dispatch, rockets?.length]);
 
   return (
     <>

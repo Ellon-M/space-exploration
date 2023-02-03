@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the navigation bar renders 1`] = `
+<nav
+  className="Navigation-bar"
+>
+  <div
+    className="navigation-list"
+  >
+    <h2>
+      Space Exploration
+    </h2>
+    <ul>
+      <li>
+        <a
+          aria-current="page"
+          className="active-link"
+          href="/"
+          onClick={[Function]}
+        >
+           Rockets 
+        </a>
+      </li>
+      <li>
+        <a
+          className="none"
+          href="/Missions"
+          onClick={[Function]}
+        >
+           Missions 
+        </a>
+      </li>
+      <div
+        className="vertical"
+      />
+      <li>
+        <a
+          className="none"
+          href="/Profile"
+          onClick={[Function]}
+        >
+           My Profile 
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;

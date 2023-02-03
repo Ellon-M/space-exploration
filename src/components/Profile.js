@@ -1,40 +1,34 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getAllRockets } from '../redux/rockets/rockets';
-import { FetchMissions } from '../redux/Missions';
 
 const Profile = () => {
-  const dispatch = useDispatch();
-  const initialState = useSelector((state) => state.rockets.rockets);
-  // const rockets = JSON.parse(localStorage.getItem('state')) ? JSON.parse(localStorage.getItem('state')) : initialState;
-  const listMissions = useSelector((mission) => mission.missions.FetchMissions);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getAllRockets());
-    dispatch(FetchMissions());
-  }, [dispatch]);
+  const initialState = useSelector((state) => state.rockets.rockets);
+  const rockets = JSON.parse(localStorage.getItem('state')) ? JSON.parse(localStorage.getItem('state')) : initialState;
+  const listMissions = useSelector((mission) => mission.missions.FetchMissions);
+  const joinedMissions = listMissions?.filter((mission) => mission.reserved);
 
   return (
     <>
       <div className="profile">
         <section className="section-rockets">
-          <Table striped bordered hover size="xl">
-            <thead>
-              {initialState && initialState.map((rocket) => (
-                rocket.reserved ? <tr key={rocket.id}>{rocket.name}</tr> : <></>
-              ))}
-            </thead>
+          <h3 className="profile-heading">Reserved Rockets</h3>
+          <Table hover size="xl">
+            <tbody>
+              {rockets && rockets.map((rocket) => (rocket.reserved ? <tr key={rocket.id} className="profile-rows">{rocket.name}</tr> : <></>))}
+            </tbody>
           </Table>
         </section>
         <section className="section-missions">
-          <Table striped bordered hover size="xl">
-            <thead>
-              { listMissions && listMissions.map((mission) => (
-                mission.reserved ? <tr key={mission.id}>{mission.name}</tr> : <></>
+          <h3 className="profile-heading">Joined Missions</h3>
+          <Table striped hover size="xl">
+            <tbody>
+              { joinedMissions && joinedMissions?.map((mission) => (
+                <tr key={mission.id} className="profile-rows">{mission.name}</tr>
               ))}
-            </thead>
+            </tbody>
           </Table>
         </section>
       </div>

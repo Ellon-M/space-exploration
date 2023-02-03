@@ -31,7 +31,7 @@ const Rocket = ({
         </p>
         { reserved
           ? <button className={styles.rocketCancelBtn} type="button" onClick={handleCancel}>Cancel Reservation</button>
-          : <button className={styles.rocketReserveBtn} type="button" onClick={handleReserve}>Reserve Rocket</button> }
+          : <button className={styles.rocketReserveBtn} type="button" data-testid="reserveBtn" onClick={handleReserve}>Reserve Rocket</button> }
       </div>
     </li>
   );

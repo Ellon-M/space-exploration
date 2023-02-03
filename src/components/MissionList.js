@@ -8,11 +8,13 @@ import Missions from './Missions';
 function MissionList() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(FetchMissions());
-  }, [dispatch]);
+  const listMissions = useSelector((state) => state.missions.FetchMissions);
 
-  const listMissions = useSelector((mission) => mission.missions.FetchMissions);
+  useEffect(() => {
+    if (listMissions.length === 0) {
+      dispatch(FetchMissions());
+    }
+  }, [dispatch, listMissions.length]);
 
   return (
     <Table striped bordered hover size="xl">
@@ -25,9 +27,7 @@ function MissionList() {
       </thead>
       <thead>
         { listMissions && listMissions.map((mission) => (
-
           <Missions key={mission.id} mission={mission} />
-
         ))}
       </thead>
 
