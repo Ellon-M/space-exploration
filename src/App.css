@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+.navigation-list ul {
+  display: flex;
+}
+
+.navigation-list ul li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.navigation-list ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.vertical {
+  border-left: 2px solid black;
+  height: 25px;
+  margin-top: 0.2rem;
+  margin-left: 1rem;
+}
+
+.member {
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+  padding: 1px 3px;
+  background-color: #1da5ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.not-member {
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+  padding: 1px 3px;
+  background-color: #595b5b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Join-mission {
+  width: 150px;
+  border: 2px solid #898484;
+  padding: 2px 10px;
+  color: #898484;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.leave-mission {
+  width: 150px;
+  border: 2px solid #f00;
+  padding: 2px 10px;
+  color: #f00;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.active-link {
+  border-bottom: 2px solid #0084ff;
+  padding: 1px;
+  width: 75%;
+}
+
+.profile {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin: 45px;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+.section-rockets {
+  width: 45%;
+}
+
+.section-missions {
+  width: 45%;
+}
+
+tbody:first-child {
+  border-top: 1px solid #5f5f5f;
+}
+
+.profile-rows {
+  height: 50px;
+  border-bottom: 1px solid #5f5f5f;
+  border-left: 1px solid #5f5f5f;
+  border-right: 1px solid #5f5f5f;
+  border-top: none;
+  font-size: 18px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  font-style: italic;
+}
+
+.profile-heading {
+  font-size: 28px;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
