@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { joinMission, leaveMission } from '../redux/Missions';
+import { joinMission, leaveMission } from '../redux/missions/Missions';
 
 const Missions = (prop) => {
   const dispatch = useDispatch();

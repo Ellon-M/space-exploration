@@ -3,10 +3,9 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Profile = () => {
-  // const dispatch = useDispatch();
-
   const initialState = useSelector((state) => state.rockets.rockets);
   const rockets = JSON.parse(localStorage.getItem('state')) ? JSON.parse(localStorage.getItem('state')) : initialState;
+  const reservedRockets = rockets?.filter((rocket) => rocket.reserved);
   const listMissions = useSelector((mission) => mission.missions.FetchMissions);
   const joinedMissions = listMissions?.filter((mission) => mission.reserved);
 
@@ -17,7 +16,7 @@ const Profile = () => {
           <h3 className="profile-heading">Reserved Rockets</h3>
           <Table hover size="xl">
             <tbody>
-              {rockets && rockets.map((rocket) => (rocket.reserved ? <tr key={rocket.id} className="profile-rows">{rocket.name}</tr> : <></>))}
+              {reservedRockets && reservedRockets.map((rocket) => (<tr key={rocket.id} className="profile-rows">{rocket.name}</tr>))}
             </tbody>
           </Table>
         </section>

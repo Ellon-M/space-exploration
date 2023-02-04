@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FetchMissions } from '../redux/Missions';
+import { FetchMissions } from '../redux/missions/Missions';
 import Missions from './Missions';
 
 function MissionList() {
