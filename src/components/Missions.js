@@ -4,11 +4,10 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { joinMission, leaveMission } from '../redux/missions/Missions';
 
-const Missions = (prop) => {
+const Missions = ({
+  id, name, description, reserved,
+}) => {
   const dispatch = useDispatch();
-  const {
-    id, name, description, reserved,
-  } = prop.mission;
   return (
     <tr key={id}>
       <td>{name}</td>
@@ -25,11 +24,11 @@ const Missions = (prop) => {
     </tr>
   );
 };
-Missions.propType = {
-  mission: PropTypes.shape({
-    name: PropTypes.string,
-    description: PropTypes.string,
-  }),
+Missions.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default Missions;

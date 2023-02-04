@@ -27,7 +27,13 @@ function MissionList() {
       </thead>
       <thead>
         { listMissions && listMissions.map((mission) => (
-          <Missions key={mission.id} mission={mission} />
+          <Missions
+            key={mission.id}
+            id={mission.id}
+            name={mission.name}
+            description={mission.description}
+            reserved={mission.reserved}
+          />
         ))}
       </thead>
 

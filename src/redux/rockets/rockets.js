@@ -29,6 +29,7 @@ const rocketSlice = createSlice({
         }
         return { ...rocket, reserved: true };
       });
+      /* eslint-disable no-param-reassign */
       state.rockets = newState;
     },
     cancel: (state, { payload }) => {
@@ -38,6 +39,7 @@ const rocketSlice = createSlice({
         }
         return { ...rocket, reserved: false };
       });
+      /* eslint-disable no-param-reassign */
       state.rockets = newState;
     },
   },
